@@ -17,7 +17,7 @@ export function DesktopPin({ trackRef }: { trackRef: RefObject<HTMLDivElement | 
     let revert: (() => void) | undefined
     let cancelled = false
 
-    void import('@/lib/gsap').then(({ gsap }) => {
+    void import('@/lib/gsap').then(({ gsap, ScrollTrigger }) => {
       if (cancelled) return
       const ctx = gsap.context(() => {
         const distance = () => el.scrollWidth - window.innerWidth + 96
@@ -48,7 +48,17 @@ export function DesktopPin({ trackRef }: { trackRef: RefObject<HTMLDivElement | 
           },
         })
       }, section)
-      revert = () => ctx.revert()
+
+      // Images settle after the pin is measured — re-measure once they have.
+      const refresh = () => ScrollTrigger.refresh()
+      window.addEventListener('load', refresh)
+      const settle = setTimeout(refresh, 1500)
+
+      revert = () => {
+        window.removeEventListener('load', refresh)
+        clearTimeout(settle)
+        ctx.revert()
+      }
     })
 
     return () => {
