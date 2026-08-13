@@ -1,0 +1,304 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Brand palette sampled directly from the PEN Group Foundation logo */
+  --color-navy-950: #04203f;
+  --color-navy-900: #05274e;
+  --color-navy-800: #0a3568;
+  --color-navy-700: #12457f;
+  --color-navy-600: #1c5a9e;
+  --color-navy-100: #dfe6ef;
+
+  --color-leaf-700: #5c7530;
+  --color-leaf-600: #6e8a38;
+  --color-leaf-500: #89a748;
+  --color-leaf-400: #a7d16a;
+  --color-leaf-300: #c3dc93;
+  --color-leaf-100: #e9f0d8;
+
+  --color-cream: #f8f7f2;
+  --color-sand: #eeece2;
+
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-cream font-sans text-navy-900 antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-leaf-400 text-navy-900;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1240px] px-6 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply font-display text-xs font-medium tracking-[0.28em] uppercase;
+  }
+
+  /* Brighter leaf so the logo holds up against navy */
+  .logo-on-dark {
+    --logo-leaf: var(--color-leaf-400);
+  }
+
+  /* Thin decorative rule echoing the logo's underline */
+  .rule-heart::after {
+    content: '';
+    @apply mt-6 block h-px w-24 bg-current opacity-25;
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Marquee */
+@keyframes ink-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.animate-marquee {
+  animation: ink-marquee 38s linear infinite;
+}
+.animate-marquee-slow {
+  animation: ink-marquee 70s linear infinite;
+}
+
+/* ---------------------------------------------------------------------------
+   Above-the-fold motion is CSS, never JS. These elements are in the
+   prerendered HTML and animate on the compositor, so the first screen is
+   complete and moving before the bundle has finished parsing. Their natural
+   (unanimated) state is the finished state, so if animations are disabled the
+   content is simply there.
+   --------------------------------------------------------------------------- */
+@keyframes word-rise {
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.word-rise > span > span {
+  display: inline-block;
+  animation: word-rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes enter-up {
+  from {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.enter-up {
+  animation: enter-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes enter-down {
+  from {
+    transform: translateY(-90px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.enter-down {
+  animation: enter-down 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+@keyframes enter-scale {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.enter-scale {
+  animation: enter-scale 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@keyframes scroll-cue {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(300%);
+  }
+}
+.animate-scroll-cue {
+  animation: scroll-cue 1.9s ease-in-out infinite;
+}
+
+/* Hero leaves on devices without the WebGL scene — compositor-only, so they
+   keep moving even when the main thread or rAF is starved. */
+@keyframes leaf-drift {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(14px, -26px, 0) rotate(var(--leaf-spin, 20deg));
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+.animate-leaf-drift {
+  animation-name: leaf-drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-slow,
+  .animate-leaf-drift,
+  .animate-float,
+  .animate-scroll-cue,
+  .enter-up,
+  .enter-down,
+  .fade-in-up,
+  .enter-scale,
+  .word-rise > span > span {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-sand);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-800);
+  border-radius: 99px;
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll reveals. The hidden state is added by JS only, and only to elements
+   that are below the fold when the observer starts, so content is never
+   invisible while waiting for a bundle.
+   --------------------------------------------------------------------------- */
+[data-reveal] {
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal].reveal-hidden {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal].reveal-hidden {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Testimonial carousel: all slides stacked, only the active one visible. */
+.story-slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.story-slide.is-active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.story-panel {
+  display: grid;
+}
+.story-panel > svg {
+  grid-area: 1 / 1;
+  justify-self: end;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-in-up {
+  animation: fade-in-up 0.35s ease both;
+}
