@@ -102,9 +102,30 @@ html.lenis body {
   animation: ink-marquee 70s linear infinite;
 }
 
+/* Hero leaves on devices without the WebGL scene — compositor-only, so they
+   keep moving even when the main thread or rAF is starved. */
+@keyframes leaf-drift {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(14px, -26px, 0) rotate(var(--leaf-spin, 20deg));
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+.animate-leaf-drift {
+  animation-name: leaf-drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
-  .animate-marquee-slow {
+  .animate-marquee-slow,
+  .animate-leaf-drift {
     animation: none;
   }
   *,

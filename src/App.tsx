@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
-import { useSmoothScroll } from './lib/useSmoothScroll'
+import { useSmoothScroll, useNativeAnchorScroll } from './lib/useSmoothScroll'
 import { ScrollTrigger } from './lib/gsap'
 import { Preloader } from './components/Preloader'
 import { Nav } from './components/Nav'
@@ -28,6 +28,7 @@ function ScrollProgress() {
 
 export default function App() {
   useSmoothScroll()
+  useNativeAnchorScroll()
 
   // Images settle after first paint — re-measure every pinned/scrubbed trigger.
   useEffect(() => {

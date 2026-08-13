@@ -1,6 +1,8 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { LazyLeafScene } from './three/LazyLeafScene'
+import { LeafFallback } from './LeafFallback'
+import { canRender3D } from '../lib/device'
 import { RevealWords } from './Reveal'
 
 export function Hero() {
@@ -9,6 +11,7 @@ export function Hero() {
   const textY = useTransform(scrollYProgress, [0, 1], [0, 140])
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0])
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -90])
+  const [use3D] = useState(canRender3D)
 
   return (
     <section
@@ -21,7 +24,11 @@ export function Hero() {
       <div className="pointer-events-none absolute -top-40 -left-40 -z-20 h-[38rem] w-[38rem] rounded-full bg-leaf-500/20 blur-[130px]" />
       <div className="pointer-events-none absolute right-[-12rem] bottom-[-14rem] -z-20 h-[36rem] w-[36rem] rounded-full bg-navy-600/35 blur-[140px]" />
 
-      <LazyLeafScene className="absolute inset-0 -z-10" />
+      {use3D ? (
+        <LazyLeafScene className="absolute inset-0 -z-10" />
+      ) : (
+        <LeafFallback className="absolute inset-0 -z-10" />
+      )}
 
       {/* legibility wash over the copy side only */}
       <div className="pointer-events-none absolute inset-0 -z-[5] bg-gradient-to-r from-navy-950/75 via-navy-950/25 to-transparent" />

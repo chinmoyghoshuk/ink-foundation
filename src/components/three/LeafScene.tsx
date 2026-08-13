@@ -1,6 +1,7 @@
-import { Suspense, useMemo, useRef } from 'react'
+import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
+import { prefersReducedMotion } from '../../lib/device'
 
 const LEAF_COLOURS = ['#a7d16a', '#c3dc93', '#89a748', '#b9dd85']
 
@@ -144,16 +145,40 @@ function PointerParallax({ reduced }: { reduced: boolean }) {
 }
 
 export function LeafScene({ className = '' }: { className?: string }) {
-  const reduced =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const reduced = prefersReducedMotion()
+  const host = useRef<HTMLDivElement>(null)
+  const [live, setLive] = useState(true)
+
+  // Stop rendering once the hero scrolls away or the tab is hidden — there is
+  // no reason to hold the GPU busy for a canvas nobody is looking at.
+  useEffect(() => {
+    const el = host.current
+    if (!el) return
+    let onScreen = true
+    const sync = () => setLive(onScreen && !document.hidden)
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        onScreen = entry.isIntersecting
+        sync()
+      },
+      { rootMargin: '120px' },
+    )
+    io.observe(el)
+    document.addEventListener('visibilitychange', sync)
+    return () => {
+      io.disconnect()
+      document.removeEventListener('visibilitychange', sync)
+    }
+  }, [])
 
   return (
-    <div className={className}>
+    <div className={className} ref={host}>
       <Canvas
         dpr={[1, 1.75]}
+        frameloop={live && !reduced ? 'always' : 'demand'}
         camera={{ position: [0, 0, 9], fov: 45 }}
-        gl={{ antialias: true, alpha: true }}
+        gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         style={{ pointerEvents: 'none' }}
       >
         <Suspense fallback={null}>
