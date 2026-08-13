@@ -102,6 +102,95 @@ html.lenis body {
   animation: ink-marquee 70s linear infinite;
 }
 
+/* ---------------------------------------------------------------------------
+   Above-the-fold motion is CSS, never JS. These elements are in the
+   prerendered HTML and animate on the compositor, so the first screen is
+   complete and moving before the bundle has finished parsing. Their natural
+   (unanimated) state is the finished state, so if animations are disabled the
+   content is simply there.
+   --------------------------------------------------------------------------- */
+@keyframes word-rise {
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.word-rise > span > span {
+  display: inline-block;
+  animation: word-rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes enter-up {
+  from {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.enter-up {
+  animation: enter-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes enter-down {
+  from {
+    transform: translateY(-90px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.enter-down {
+  animation: enter-down 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+@keyframes enter-scale {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.enter-scale {
+  animation: enter-scale 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@keyframes scroll-cue {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(300%);
+  }
+}
+.animate-scroll-cue {
+  animation: scroll-cue 1.9s ease-in-out infinite;
+}
+
 /* Hero leaves on devices without the WebGL scene — compositor-only, so they
    keep moving even when the main thread or rAF is starved. */
 @keyframes leaf-drift {
@@ -125,7 +214,13 @@ html.lenis body {
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .animate-marquee-slow,
-  .animate-leaf-drift {
+  .animate-leaf-drift,
+  .animate-float,
+  .animate-scroll-cue,
+  .enter-up,
+  .enter-down,
+  .enter-scale,
+  .word-rise > span > span {
     animation: none;
   }
   *,

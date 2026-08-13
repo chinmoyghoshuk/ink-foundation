@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import { useSmoothScroll, useNativeAnchorScroll } from './lib/useSmoothScroll'
 import { ScrollTrigger } from './lib/gsap'
-import { Preloader } from './components/Preloader'
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { Marquee } from './components/Marquee'
@@ -43,7 +42,6 @@ export default function App() {
 
   return (
     <>
-      <Preloader />
       <ScrollProgress />
       <Nav />
       <main>

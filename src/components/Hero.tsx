@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { LazyLeafScene } from './three/LazyLeafScene'
 import { LeafFallback } from './LeafFallback'
 import { canRender3D } from '../lib/device'
+import { useHydrated } from '../lib/useHydrated'
 import { RevealWords } from './Reveal'
 
 export function Hero() {
@@ -11,7 +12,9 @@ export function Hero() {
   const textY = useTransform(scrollYProgress, [0, 1], [0, 140])
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0])
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -90])
-  const [use3D] = useState(canRender3D)
+  // The prerendered HTML always carries the CSS fallback; capable clients
+  // upgrade to the WebGL scene after hydration.
+  const use3D = useHydrated() && canRender3D()
 
   return (
     <section
@@ -35,15 +38,13 @@ export function Hero() {
 
       <div className="container-x relative grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
         <motion.div style={{ y: textY, opacity: fade }} className="lg:col-span-7">
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="eyebrow flex items-center gap-3 text-leaf-400"
+          <p
+            className="enter-up eyebrow flex items-center gap-3 text-leaf-400"
+            style={{ animationDelay: '0.15s' }}
           >
             <span className="h-px w-10 bg-leaf-400/60" />
             The charitable foundation of PEN Group Holdings
-          </motion.p>
+          </p>
 
           <h1 className="mt-7 font-display text-[clamp(2.8rem,7.2vw,5.4rem)] leading-[1.02] font-semibold tracking-[-0.03em] text-white">
             <RevealWords text="Where every story" />
@@ -51,21 +52,17 @@ export function Hero() {
             <RevealWords text="takes root." delay={0.18} highlight={['root']} />
           </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.75 }}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-navy-100/80"
+          <p
+            className="enter-up mt-8 max-w-xl text-lg leading-relaxed text-navy-100/80"
+            style={{ animationDelay: '0.7s' }}
           >
             We put books, learning and green community space within reach of children who are
             growing up without them — then we stay for the long chapters, not just the first page.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.9 }}
-            className="mt-11 flex flex-wrap items-center gap-4"
+          <div
+            className="enter-up mt-11 flex flex-wrap items-center gap-4"
+            style={{ animationDelay: '0.85s' }}
           >
             <a
               href="#donate"
@@ -93,13 +90,11 @@ export function Hero() {
             >
               Our story
             </a>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.15 }}
-            className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-4 text-sm text-navy-100/55"
+          <div
+            className="enter-up mt-14 flex flex-wrap items-center gap-x-10 gap-y-4 text-sm text-navy-100/55"
+            style={{ animationDelay: '1.05s' }}
           >
             <span className="flex items-center gap-2">
               <Dot /> 100% of public gifts reach programmes
@@ -107,57 +102,47 @@ export function Hero() {
             <span className="flex items-center gap-2">
               <Dot /> Independently audited
             </span>
-          </motion.div>
+          </div>
         </motion.div>
 
         <motion.div
-          style={{ y: imageY }}
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="relative lg:col-span-5"
+          style={{ y: imageY, animationDelay: '0.45s' }}
+          className="enter-scale relative lg:col-span-5"
         >
           <div className="relative mx-auto max-w-md lg:max-w-none">
             <div className="absolute -inset-3 rounded-[2rem] border border-white/10" />
             <div className="relative overflow-hidden rounded-[1.7rem] shadow-2xl shadow-navy-950/50">
               <img
-                src="/img/hero-children.jpg"
+                src="/img/hero-children.webp"
+                srcSet="/img/hero-children-760.webp 760w, /img/hero-children.webp 1600w"
+                sizes="(max-width: 1023px) 92vw, 40vw"
                 alt="Children laughing together outside a community learning centre"
                 className="aspect-[4/5] w-full object-cover"
                 loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent" />
             </div>
 
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -bottom-7 -left-6 w-[15rem] rounded-2xl border border-white/10 bg-navy-950/85 p-5 backdrop-blur-md sm:-left-10"
-            >
+            <div className="animate-float absolute -bottom-7 -left-6 w-[15rem] rounded-2xl border border-white/10 bg-navy-950/85 p-5 backdrop-blur-md sm:-left-10">
               <p className="font-display text-3xl font-semibold text-leaf-400">12,480</p>
               <p className="mt-1 text-sm leading-snug text-navy-100/70">
                 children reading with us this year
               </p>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
 
       <motion.a
         href="#story"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
         style={{ opacity: fade }}
         className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-[11px] tracking-[0.3em] text-white/45 uppercase lg:flex"
       >
         Scroll
         <span className="relative block h-12 w-px overflow-hidden bg-white/15">
-          <motion.span
-            animate={{ y: ['-100%', '100%'] }}
-            transition={{ duration: 1.9, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute inset-x-0 block h-6 bg-leaf-400"
-          />
+          <span className="animate-scroll-cue absolute inset-x-0 block h-6 bg-leaf-400" />
         </span>
       </motion.a>
     </section>

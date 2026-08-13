@@ -32,7 +32,7 @@ export function Story() {
             className="absolute top-0 left-0 w-[62%] overflow-hidden rounded-[1.5rem] shadow-xl shadow-navy-950/10"
           >
             <img
-              src="/img/classroom.jpg"
+              src="/img/classroom.webp"
               alt="A teacher working with pupils in a busy classroom"
               className="aspect-[3/4] w-full object-cover"
               loading="lazy"
@@ -44,7 +44,7 @@ export function Story() {
             className="absolute right-0 bottom-0 w-[58%] overflow-hidden rounded-[1.5rem] shadow-xl shadow-navy-950/10"
           >
             <img
-              src="/img/library.jpg"
+              src="/img/library.webp"
               alt="A young reader walking between library shelves"
               className="aspect-[4/5] w-full object-cover"
               loading="lazy"

@@ -8,21 +8,21 @@ const STORIES = [
       'She used to hide at the back of the class. Now she reads to the little ones on a Friday, and she chooses the book.',
     name: 'Amara O.',
     role: 'Parent, Riverside Reading Room',
-    image: '/img/person-1.jpg',
+    image: '/img/person-1.webp',
   },
   {
     quote:
       'The bundles changed what our library corner is for. Children come in at break now — not because we ask them to.',
     name: 'Daniel M.',
     role: 'Head teacher, partner school',
-    image: '/img/person-2.jpg',
+    image: '/img/person-2.webp',
   },
   {
     quote:
       'I signed up for one Saturday. Two years later I run the garden rota. It is the best hour of my week, every week.',
     name: 'Priya R.',
     role: 'Volunteer, Learning Gardens',
-    image: '/img/person-3.jpg',
+    image: '/img/person-3.webp',
   },
 ]
 
@@ -90,7 +90,7 @@ export function Stories() {
           <Reveal delay={0.1}>
             <div className="relative min-h-[22rem] overflow-hidden rounded-[1.8rem] border border-navy-900/10 bg-white p-8 sm:min-h-[20rem] sm:p-12">
               <Quote className="absolute top-8 right-8 h-16 w-16 text-leaf-100" />
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.figure
                   key={story.name}
                   initial={{ opacity: 0, y: 24 }}

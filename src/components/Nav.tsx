@@ -20,12 +20,7 @@ export function Nav() {
   useEffect(() => setSolid(window.scrollY > 80), [])
 
   return (
-    <motion.header
-      initial={{ y: -90, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed inset-x-0 top-0 z-50"
-    >
+    <header className="enter-down fixed inset-x-0 top-0 z-50">
       <div
         className={`transition-all duration-500 ${
           solid
@@ -126,6 +121,6 @@ export function Nav() {
           </motion.nav>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   )
 }

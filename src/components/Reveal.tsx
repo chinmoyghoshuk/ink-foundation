@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import { useScrollAnimations } from '../lib/useHydrated'
 
 type Props = {
   children: ReactNode
@@ -9,8 +10,19 @@ type Props = {
   once?: boolean
 }
 
-/** Standard scroll-in reveal used across the page (Framer Motion). */
+/**
+ * Scroll-in reveal.
+ *
+ * Renders as plain, visible markup during the prerender, on the first client
+ * render, and on touch devices — content must never depend on JS to become
+ * visible. Pointer devices upgrade to the Framer Motion version after
+ * hydration, by which point anything animated is below the fold anyway.
+ */
 export function Reveal({ children, delay = 0, y = 28, className, once = true }: Props) {
+  const animate = useScrollAnimations()
+
+  if (!animate) return <div className={className}>{children}</div>
+
   return (
     <motion.div
       className={className}
@@ -24,7 +36,13 @@ export function Reveal({ children, delay = 0, y = 28, className, once = true }: 
   )
 }
 
-/** Word-by-word headline reveal, each word masked by its own overflow box. */
+/**
+ * Word-by-word headline reveal, each word masked by its own overflow box.
+ *
+ * Pure CSS: it is part of the prerendered HTML and runs on the compositor, so
+ * the headline is readable immediately and animates without waiting for — or
+ * depending on — the JS bundle.
+ */
 export function RevealWords({
   text,
   className,
@@ -38,33 +56,24 @@ export function RevealWords({
 }) {
   const words = text.split(' ')
   return (
-    <motion.span
-      className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: '-60px' }}
-      variants={{ show: { transition: { staggerChildren: 0.055, delayChildren: delay } } }}
-    >
+    <span className={`word-rise ${className ?? ''}`}>
       {words.map((word, i) => (
         <span
           key={`${word}-${i}`}
           className="mr-[0.26em] inline-block overflow-hidden pb-[0.12em] align-bottom"
         >
-          <motion.span
+          <span
             className={
               highlight.includes(word.replace(/[^\w]/g, ''))
                 ? 'inline-block text-leaf-400'
                 : 'inline-block'
             }
-            variants={{
-              hidden: { y: '110%', opacity: 0 },
-              show: { y: '0%', opacity: 1, transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] } },
-            }}
+            style={{ animationDelay: `${delay + i * 0.055}s` }}
           >
             {word}
-          </motion.span>
+          </span>
         </span>
       ))}
-    </motion.span>
+    </span>
   )
 }

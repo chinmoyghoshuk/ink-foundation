@@ -28,7 +28,7 @@ export function Donate() {
   return (
     <section id="donate" className="relative overflow-hidden bg-navy-950 py-24 text-white sm:py-32">
       <div className="pointer-events-none absolute inset-0 opacity-[0.16]">
-        <img src="/img/leaf-heart.jpg" alt="" className="h-full w-full object-cover" />
+        <img src="/img/leaf-heart.webp" alt="" className="h-full w-full object-cover" />
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_20%_20%,rgba(5,39,78,0.75),#04203f_70%)]" />
       <div className="pointer-events-none absolute top-1/3 -right-40 h-[30rem] w-[30rem] rounded-full bg-leaf-500/15 blur-[120px]" />
@@ -110,7 +110,7 @@ export function Donate() {
             </div>
 
             <div className="mt-5 min-h-[3.5rem]">
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.p
                   key={`${mode}-${selected}`}
                   initial={{ opacity: 0, y: 8 }}

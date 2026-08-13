@@ -6,7 +6,9 @@ and leaf-green (`#89A748`) palette.
 
 ## Stack
 
-- **Vite + React 19 + TypeScript**
+- **Vite + React 19 + TypeScript**, prerendered at build time — `npm run build`
+  renders the page to static HTML and bakes it into `dist/index.html`, then the
+  client hydrates it. The page is readable before the JS bundle arrives.
 - **Tailwind CSS v4** — brand tokens live in `src/index.css` under `@theme`
 - **Framer Motion** — reveals, headline word masks, nav, carousel, donation panel
 - **GSAP + ScrollTrigger** — stat counters, pinned horizontal "how a gift grows" section
@@ -23,9 +25,22 @@ npm run dev
 ## Build
 
 ```bash
-npm run build      # → dist/
+npm run build      # client build → SSR build → prerender into dist/index.html
 npm run preview
 ```
+
+## Rendering rules
+
+The site must be usable on a slow phone before the bundle finishes parsing, so:
+
+- Nothing is hidden by JS. `Reveal` renders plain, visible markup during the
+  prerender, on the first client render, and on touch devices; only pointer
+  devices upgrade to scroll animations after hydration.
+- Above-the-fold motion (hero entrance, headline word rise, floating chip,
+  scroll cue) is CSS keyframes, not Framer Motion — it runs on the compositor
+  straight from the HTML.
+- Lenis smooth scrolling and the WebGL hero are pointer-device only. Phones get
+  native scrolling and CSS leaves.
 
 ## Deploy
 
