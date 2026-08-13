@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Brand palette sampled directly from the Ink Foundation logo */
+  /* Brand palette sampled directly from the PEN Group Foundation logo */
   --color-navy-950: #04203f;
   --color-navy-900: #05274e;
   --color-navy-800: #0a3568;
@@ -60,6 +60,11 @@
 
   .eyebrow {
     @apply font-display text-xs font-medium tracking-[0.28em] uppercase;
+  }
+
+  /* Brighter leaf so the logo holds up against navy */
+  .logo-on-dark {
+    --logo-leaf: var(--color-leaf-400);
   }
 
   /* Thin decorative rule echoing the logo's underline */

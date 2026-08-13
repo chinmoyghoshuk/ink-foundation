@@ -1,7 +1,8 @@
-# Ink Foundation — one-page site
+# PEN Group Foundation — one-page site
 
-A single-page site for the Ink Foundation charity, built around the existing logo's
-navy (`#05274E`) and leaf-green (`#89A748`) palette.
+A single-page site for PEN Group Foundation, the charitable organisation of
+[PEN Group Holdings](https://www.pengroup.com), built around the logo's navy (`#05274E`)
+and leaf-green (`#89A748`) palette.
 
 ## Stack
 
@@ -33,9 +34,18 @@ npm run preview
 
 ## Assets
 
-- `public/logo.png`, `logo-light.png`, `mark.png`, `mark-light.png`, `favicon.png` are
-  generated from the supplied logo artwork — the white background is keyed out, and the
-  `-light` variants recolour the navy to white for use on dark sections.
+- `src/assets/brand/logo.svg` and `mark.svg` are traced vector versions of the supplied
+  logo artwork, inlined into the page by `src/components/BrandLogo.tsx`. Their navy paths
+  use `currentColor` and the leaf reads `--logo-leaf`, so the mark recolours itself for
+  navy sections (`.logo-on-dark`) with no second asset.
+- Regenerate them from a new bitmap with:
+
+  ```bash
+  python scripts/trace-logo.py path/to/logo.png src/assets/brand public
+  ```
+
+  which also rewrites `public/favicon.png`, `apple-touch-icon.png` and the `og.png`
+  social card. Needs `potrace` and Pillow.
 - `public/img/*` are stock photographs from [Unsplash](https://unsplash.com), used under
   the Unsplash licence. Swap them for real programme photography before launch.
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { LogoMark } from './BrandLogo'
 
 /** Brief navy curtain that lifts once the first paint is done. */
 export function Preloader() {
@@ -21,14 +22,13 @@ export function Preloader() {
           className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-950"
         >
           <div className="flex flex-col items-center">
-            <motion.img
-              src="/mark-light.png"
-              alt=""
+            <motion.div
               initial={{ opacity: 0, y: 14, filter: 'blur(6px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="h-12 w-auto sm:h-14"
-            />
+            >
+              <LogoMark className="logo-on-dark h-12 text-white sm:h-14" />
+            </motion.div>
             <div className="mt-8 h-px w-40 overflow-hidden bg-white/10">
               <motion.div
                 initial={{ x: '-100%' }}

@@ -60,13 +60,13 @@ export function Story() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-5 font-display text-[clamp(2rem,4.2vw,3.3rem)] leading-[1.06] font-semibold tracking-[-0.025em]">
-              Ink is only the beginning. What grows from it is the point.
+              A pen is only the beginning. What grows from it is the point.
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
             <p className="mt-7 text-lg leading-relaxed text-navy-900/70">
-              Ink Foundation began with a simple observation: in the communities we work with,
-              children were not short of curiosity — they were short of pages. So we started
+              PEN Group Foundation began with a simple observation: in the communities we work
+              with, children were not short of curiosity — they were short of pages. So we started
               handing out books, and quickly learned that a book without a quiet, safe, welcoming
               place to read it rarely gets opened twice.
             </p>
@@ -74,7 +74,16 @@ export function Story() {
           <Reveal delay={0.2}>
             <p className="mt-5 text-lg leading-relaxed text-navy-900/70">
               Today we fund reading rooms, learning gardens and the people who keep them running —
-              because literacy grows where someone tends it.
+              because literacy grows where someone tends it. We are the charitable organisation of{' '}
+              <a
+                href="https://www.pengroup.com"
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-leaf-600 underline decoration-leaf-500/40 underline-offset-4 transition-colors hover:decoration-leaf-500"
+              >
+                PEN Group Holdings
+              </a>
+              , which underwrites our running costs so that public donations go only to programmes.
             </p>
           </Reveal>
 

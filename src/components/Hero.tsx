@@ -35,7 +35,7 @@ export function Hero() {
             className="eyebrow flex items-center gap-3 text-leaf-400"
           >
             <span className="h-px w-10 bg-leaf-400/60" />
-            A charitable foundation
+            The charitable foundation of PEN Group Holdings
           </motion.p>
 
           <h1 className="mt-7 font-display text-[clamp(2.8rem,7.2vw,5.4rem)] leading-[1.02] font-semibold tracking-[-0.03em] text-white">

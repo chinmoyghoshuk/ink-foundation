@@ -1,4 +1,5 @@
 import { Reveal } from './Reveal'
+import { LogoLockup } from './BrandLogo'
 
 const COLUMNS = [
   {
@@ -11,7 +12,7 @@ const COLUMNS = [
   },
   {
     title: 'Contact',
-    links: ['hello@inkfoundation.org', '+44 (0)20 0000 0000', 'Mon–Fri, 9am–5pm'],
+    links: ['hello@pengroupfoundation.org', '+44 (0)20 0000 0000', 'Mon–Fri, 9am–5pm'],
   },
 ]
 
@@ -37,9 +38,21 @@ export function Footer() {
         <Reveal>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <img src="/logo-light.png" alt="Ink Foundation" className="h-24 w-auto" />
+              <LogoLockup className="logo-on-dark h-24 text-white" label="PEN Group Foundation" />
               <p className="mt-8 max-w-xs text-[15px] leading-relaxed text-navy-100/55">
                 Books, learning and green community space within reach of every child.
+              </p>
+              <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-navy-100/55">
+                The charitable organisation of{' '}
+                <a
+                  href="https://www.pengroup.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-leaf-400 transition-colors hover:text-leaf-300"
+                >
+                  PEN Group Holdings
+                </a>
+                .
               </p>
               <div className="mt-8 flex gap-3">
                 {SOCIALS.map((social) => (
@@ -90,7 +103,7 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col items-center gap-4 border-t border-white/10 pt-8 sm:flex-row sm:justify-between">
           <p className="text-xs text-white/35">
-            © {new Date().getFullYear()} Ink Foundation. Registered charity no. 000000.
+            © {new Date().getFullYear()} PEN Group Foundation. Registered charity no. 000000.
           </p>
           <div className="flex items-center gap-6 text-xs text-white/35">
             <a href="#top" className="transition-colors hover:text-white/70">
@@ -111,7 +124,7 @@ export function Footer() {
         aria-hidden="true"
         className="pointer-events-none mt-6 -mb-[5vw] text-center font-display text-[20vw] leading-[0.78] font-semibold tracking-[-0.04em] text-white/[0.035] select-none"
       >
-        ink
+        pen
       </p>
     </footer>
   )

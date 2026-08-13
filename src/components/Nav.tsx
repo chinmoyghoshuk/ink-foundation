@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
+import { LogoMark } from './BrandLogo'
 
 const LINKS = [
   { label: 'Our story', href: '#story' },
@@ -33,11 +34,11 @@ export function Nav() {
         }`}
       >
         <div className="container-x flex h-20 items-center justify-between gap-6">
-          <a href="#top" aria-label="Ink Foundation — home" className="flex items-center">
-            <img
-              src={solid ? '/mark.png' : '/mark-light.png'}
-              alt="Ink Foundation"
-              className="h-8 w-auto transition-opacity duration-300 sm:h-9"
+          <a href="#top" aria-label="PEN Group Foundation — home" className="flex items-center">
+            <LogoMark
+              className={`h-8 transition-colors duration-500 sm:h-9 ${
+                solid ? 'text-navy-900' : 'logo-on-dark text-white'
+              }`}
             />
           </a>
 
