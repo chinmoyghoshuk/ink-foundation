@@ -34,7 +34,7 @@ export function Nav({ logo }: { logo: ReactNode }) {
         <div className="container-x flex h-20 items-center justify-between gap-6">
           <a
             href="#top"
-            aria-label="PEN Group Foundation — home"
+            aria-label="PEN Group Foundation home"
             className={`flex h-8 items-center transition-colors duration-500 sm:h-9 ${
               solid ? 'text-navy-900' : 'logo-on-dark text-white'
             }`}

@@ -5,7 +5,7 @@ const FOCUS_AREAS = [
   {
     tag: 'Education',
     title: 'Education & skills',
-    body: 'Scholarships, bursaries, vocational training and apprenticeships — together with the practical costs that decide whether someone finishes what they started.',
+    body: 'Scholarships, bursaries, vocational training and apprenticeships, together with the practical costs that decide whether someone finishes what they started.',
     image: '/img/skills-workshop.webp',
     alt: 'Trainees working at a metalwork bench in a vocational workshop',
   },
@@ -19,7 +19,7 @@ const FOCUS_AREAS = [
   {
     tag: 'Sport',
     title: 'Sport & youth development',
-    body: 'Sport as a route into discipline, belonging and opportunity — delivered through clubs and coaches already trusted in the places they serve.',
+    body: 'Sport as a route into discipline, belonging and opportunity, delivered through clubs and coaches already trusted in the places they serve.',
     image: '/img/sport-pitch.webp',
     alt: 'A floodlit football pitch at night',
   },

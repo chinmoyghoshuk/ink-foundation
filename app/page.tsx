@@ -7,7 +7,6 @@ import { Involved } from '@/components/Involved'
 import { Journey } from '@/components/Journey'
 import { LogoMark } from '@/components/BrandLogo'
 import { Nav } from '@/components/Nav'
-import { Partners } from '@/components/Partners'
 import { Programmes } from '@/components/Programmes'
 import { ScrollProgress } from '@/components/ScrollProgress'
 import { SmoothScroll } from '@/components/SmoothScroll'
@@ -24,7 +23,6 @@ export default function Page() {
       <Nav logo={<LogoMark className="h-full" />} />
       <main>
         <Hero />
-        <Partners />
         <Story />
         <Stats />
         <Programmes />

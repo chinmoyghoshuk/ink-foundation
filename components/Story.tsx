@@ -5,7 +5,7 @@ import { Reveal } from './Reveal'
 const PILLARS = [
   {
     title: 'Investing in people',
-    body: 'Education, skills and mentoring — along with the practical costs that quietly decide who gets to continue and who does not.',
+    body: 'Education, skills and mentoring, along with the practical costs that quietly decide who gets to continue and who does not.',
   },
   {
     title: 'Supporting worthwhile causes',
@@ -69,7 +69,7 @@ export function Story() {
           <Reveal delay={0.2}>
             <p className="mt-5 text-lg leading-relaxed text-navy-900/70">
               By investing in people, supporting worthwhile causes and partnering with organisations
-              that share our values, we aim to deliver lasting social impact — and help build
+              that share our values, we aim to deliver lasting social impact, and to help build
               brighter futures for communities both at home and across the globe.
             </p>
           </Reveal>

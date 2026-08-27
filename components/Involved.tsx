@@ -1,12 +1,12 @@
 import Image from 'next/image'
-import { Arrow } from './Hero'
+import { Arrow } from './Arrow'
 import { NewsletterForm } from './NewsletterForm'
 import { Reveal } from './Reveal'
 
 const WAYS = [
   {
     title: 'Partner',
-    body: 'For organisations whose work overlaps with ours — education, community, sport or international development. Tell us what you are trying to do and what stands in the way.',
+    body: 'For organisations whose work overlaps with ours: education, community, sport or international development. Tell us what you are trying to do and what stands in the way.',
     image: '/img/partner-talk.webp',
     alt: 'Two colleagues in conversation beside a bright office window',
     cta: 'Start a conversation',

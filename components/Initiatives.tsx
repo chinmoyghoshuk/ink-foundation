@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { AmbientVideo } from './AmbientVideo'
-import { PartnerMark } from './Partners'
+import { PartnerMark } from './PartnerMark'
 import { Reveal } from './Reveal'
 import { PARTNERS } from '@/lib/partners'
 
@@ -8,7 +8,7 @@ const INITIATIVES = [
   {
     partner: PARTNERS[0],
     heading: 'Opening doors that qualifications alone do not',
-    body: 'We back mentoring that connects people in under-served communities with role models drawn from business and the professions — the kind of relationship that turns ambition into a plausible next step.',
+    body: 'We back mentoring that connects people in under-served communities with role models drawn from business and the professions. It is the kind of relationship that turns ambition into a plausible next step.',
     points: ['Mentor recruitment', 'Employability workshops', 'Multi-year funding'],
     video: '/video/campus.mp4',
     poster: '/img/campus-poster.webp',
@@ -17,7 +17,7 @@ const INITIATIVES = [
   {
     partner: PARTNERS[1],
     heading: 'A club is the shortest route to a community',
-    body: 'Football clubs reach people no foundation could reach on its own. We support community work built around the club — sport, health and education programmes delivered by people the city already trusts.',
+    body: 'Football clubs reach people no foundation could reach on its own. We support community work built around the club: sport, health and education programmes delivered by people the city already trusts.',
     points: ['Youth participation', 'Health & wellbeing', 'Facilities and kit'],
     video: '/video/football.mp4',
     poster: '/img/football-poster.webp',

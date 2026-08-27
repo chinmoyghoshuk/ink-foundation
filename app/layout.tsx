@@ -17,9 +17,9 @@ const inter = Inter({
   display: 'swap',
 })
 
-const title = 'PEN Group Foundation — Charitable, educational and community initiatives'
+const title = 'PEN Group Foundation | Charitable, educational and community initiatives'
 const description =
-  'The PEN Group Foundation supports charitable, educational and community-focused initiatives around the world — investing in people, supporting worthwhile causes and partnering with organisations that share our values.'
+  'The PEN Group Foundation supports charitable, educational and community-focused initiatives around the world, investing in people, supporting worthwhile causes and partnering with organisations that share our values.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://foundation.pencloud.uk'),

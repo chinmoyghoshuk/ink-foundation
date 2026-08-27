@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Arrow } from './Hero'
+import { Arrow } from './Arrow'
 import { JourneyTrack } from './JourneyTrack'
 import { Reveal } from './Reveal'
 
@@ -14,7 +14,7 @@ const STEPS = [
   {
     n: '02',
     title: 'We assess and commit',
-    body: 'Trustees review need, governance and evidence of delivery — then commit for a defined period, so a partner can plan around the funding rather than reapply for it.',
+    body: 'Trustees review need, governance and evidence of delivery, then commit for a defined period, so a partner can plan around the funding rather than reapply for it.',
     image: '/img/event-mingle.webp',
     alt: 'People in conversation at a partner gathering',
   },
@@ -28,7 +28,7 @@ const STEPS = [
   {
     n: '04',
     title: 'We measure and publish',
-    body: 'Outcomes are tracked against what was promised and reported in full each year — whether the numbers flatter us or not.',
+    body: 'Outcomes are tracked against what was promised and reported in full each year, whether the numbers flatter us or not.',
     image: '/img/partners-event.webp',
     alt: 'A large group gathered at an annual partner event',
   },
@@ -88,7 +88,7 @@ export function Journey() {
                   Success carries a responsibility to create opportunities for others.
                 </h3>
                 <p className="mt-5 text-[15px] leading-relaxed text-navy-100/60">
-                  That belief decides everything the Foundation funds — and everyone we choose to
+                  That belief decides everything the Foundation funds, and everyone we choose to
                   fund it alongside.
                 </p>
               </div>

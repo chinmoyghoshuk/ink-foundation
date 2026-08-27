@@ -30,7 +30,7 @@ export function Donate() {
           </Reveal>
           <Reveal delay={0.14}>
             <p className="mt-7 max-w-lg text-lg leading-relaxed text-navy-100/70">
-              Every public donation goes straight into programmes — our core costs are underwritten
+              Every public donation goes straight into programmes. Our core costs are underwritten
               separately, so the number you give is the number that arrives.
             </p>
           </Reveal>
