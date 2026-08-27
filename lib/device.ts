@@ -14,3 +14,12 @@ export const isCoarsePointer = () => matches('(pointer: coarse)') || !matches('(
  */
 export const canRender3D = () =>
   matches('(min-width: 1024px)') && !isCoarsePointer() && !prefersReducedMotion()
+
+/**
+ * Ambient background video is decoration, not content. It only runs where the
+ * bandwidth and the screen justify it: phones get the poster still and nothing
+ * else, so a mid-range handset never spends a megabyte on a looping clip it
+ * would show at postage-stamp size.
+ */
+export const canPlayAmbientVideo = () =>
+  matches('(min-width: 1024px)') && !isCoarsePointer() && !prefersReducedMotion()

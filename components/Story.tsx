@@ -1,45 +1,47 @@
 import Image from 'next/image'
+import { AmbientVideo } from './AmbientVideo'
 import { Reveal } from './Reveal'
 
 const PILLARS = [
   {
-    title: 'Books first',
-    body: 'A child with a book of their own reads for pleasure, not for marks. We start there.',
+    title: 'Investing in people',
+    body: 'Education, skills and mentoring — along with the practical costs that quietly decide who gets to continue and who does not.',
   },
   {
-    title: 'Places to belong',
-    body: 'Reading rooms, gardens and after-school spaces that stay open long after we launch them.',
+    title: 'Supporting worthwhile causes',
+    body: 'Funding for organisations already doing the work well, chosen on merit and reviewed against evidence rather than profile.',
   },
   {
-    title: 'Local hands',
-    body: 'Every programme is run by people who already live on the street it serves.',
+    title: 'Partnering on shared values',
+    body: 'Long-term relationships with institutions whose standards match our own, at home and internationally.',
   },
 ]
 
 export function Story() {
   return (
-    <section id="story" className="relative overflow-hidden bg-cream pt-8 pb-24 sm:pb-32">
+    <section id="foundation" className="relative overflow-hidden bg-cream py-24 sm:py-32">
       <div className="container-x grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
-        <div className="relative order-2 h-[30rem] sm:h-[38rem] lg:order-1">
-          <div className="absolute top-0 left-0 w-[62%] overflow-hidden rounded-[1.5rem] shadow-xl shadow-navy-950/10">
-            <div className="relative aspect-[3/4]">
-              <Image
-                src="/img/classroom.webp"
-                alt="A teacher working with pupils in a busy classroom"
-                fill
-                sizes="(max-width: 1023px) 55vw, 28vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
+        <div className="relative order-2 lg:order-1">
+          <AmbientVideo
+            src="/video/foundation.mp4"
+            className="aspect-[4/3] rounded-[1.6rem] shadow-xl shadow-navy-950/10"
+          >
+            <Image
+              src="/img/foundation-poster.webp"
+              alt="Hands settling a young plant into a bed of soil"
+              fill
+              sizes="(max-width: 1023px) 92vw, 46vw"
+              className="object-cover"
+            />
+          </AmbientVideo>
 
-          <div className="absolute right-0 bottom-0 w-[58%] overflow-hidden rounded-[1.5rem] shadow-xl shadow-navy-950/10">
-            <div className="relative aspect-[4/5]">
+          <div className="absolute -right-4 -bottom-12 hidden w-[42%] overflow-hidden rounded-[1.4rem] border-4 border-cream shadow-xl shadow-navy-950/10 sm:block">
+            <div className="relative aspect-[4/3]">
               <Image
-                src="/img/library.webp"
-                alt="A young reader walking between library shelves"
+                src="/img/global-village.webp"
+                alt="A riverside village surrounded by dense green forest"
                 fill
-                sizes="(max-width: 1023px) 52vw, 26vw"
+                sizes="22vw"
                 className="object-cover"
               />
             </div>
@@ -50,25 +52,30 @@ export function Story() {
 
         <div className="order-1 lg:order-2">
           <Reveal>
-            <p className="eyebrow text-leaf-600">Our story</p>
+            <p className="eyebrow text-leaf-600">The Foundation</p>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-5 font-display text-[clamp(2rem,4.2vw,3.3rem)] leading-[1.06] font-semibold tracking-[-0.025em]">
-              A pen is only the beginning. What grows from it is the point.
+              The heart of our commitment to giving back.
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
             <p className="mt-7 text-lg leading-relaxed text-navy-900/70">
-              PEN Group Foundation began with a simple observation: in the communities we work
-              with, children were not short of curiosity — they were short of pages. So we started
-              handing out books, and quickly learned that a book without a quiet, safe, welcoming
-              place to read it rarely gets opened twice.
+              The PEN Group Foundation was created to support charitable, educational and
+              community-focused initiatives around the world. It reflects our belief that success
+              carries a responsibility to create opportunities for others.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-5 text-lg leading-relaxed text-navy-900/70">
-              Today we fund reading rooms, learning gardens and the people who keep them running —
-              because literacy grows where someone tends it. We are the charitable organisation of{' '}
+              By investing in people, supporting worthwhile causes and partnering with organisations
+              that share our values, we aim to deliver lasting social impact — and help build
+              brighter futures for communities both at home and across the globe.
+            </p>
+          </Reveal>
+          <Reveal delay={0.26}>
+            <p className="mt-5 text-lg leading-relaxed text-navy-900/70">
+              We are the charitable organisation of{' '}
               <a
                 href="https://www.pengroup.com"
                 target="_blank"
@@ -83,7 +90,7 @@ export function Story() {
 
           <div className="mt-12 space-y-px overflow-hidden rounded-2xl border border-navy-900/10">
             {PILLARS.map((pillar, i) => (
-              <Reveal key={pillar.title} delay={0.24 + i * 0.07}>
+              <Reveal key={pillar.title} delay={0.3 + i * 0.07}>
                 <div className="group flex gap-5 bg-white/60 px-6 py-6 transition-colors hover:bg-leaf-100/70">
                   <span className="mt-1 font-display text-sm font-semibold text-leaf-600 tabular-nums">
                     0{i + 1}

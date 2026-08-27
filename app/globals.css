@@ -67,6 +67,12 @@
     --logo-leaf: var(--color-leaf-400);
   }
 
+
+  /* Clears the fixed header when a #hash lands before the scroll scripts run */
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
   /* Thin decorative rule echoing the logo's underline */
   .rule-heart::after {
     content: '';
@@ -84,22 +90,6 @@ html.lenis body {
 }
 .lenis.lenis-stopped {
   overflow: hidden;
-}
-
-/* Marquee */
-@keyframes ink-marquee {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-.animate-marquee {
-  animation: ink-marquee 38s linear infinite;
-}
-.animate-marquee-slow {
-  animation: ink-marquee 70s linear infinite;
 }
 
 /* ---------------------------------------------------------------------------
@@ -212,8 +202,6 @@ html.lenis body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee,
-  .animate-marquee-slow,
   .animate-leaf-drift,
   .animate-float,
   .animate-scroll-cue,

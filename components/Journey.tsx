@@ -6,31 +6,31 @@ import { Reveal } from './Reveal'
 const STEPS = [
   {
     n: '01',
-    title: 'You give',
-    body: '£25 becomes six books a child picks out themselves. £60 keeps a reading room lit and staffed for a week.',
-    image: '/img/make-a-change.webp',
-    alt: 'Hands holding coins and a handwritten note reading make a change',
+    title: 'A cause is proposed',
+    body: 'Partners, employees and community organisations put causes forward. Every proposal is assessed against the same published criteria, whoever it comes from.',
+    image: '/img/meeting-room.webp',
+    alt: 'A group discussing a proposal around a table',
   },
   {
     n: '02',
-    title: 'We match it locally',
-    body: 'Partner schools and hubs nominate the children in front of them. No waiting lists drawn up in an office far away.',
-    image: '/img/classroom.webp',
-    alt: 'Pupils working together in a classroom',
+    title: 'We assess and commit',
+    body: 'Trustees review need, governance and evidence of delivery — then commit for a defined period, so a partner can plan around the funding rather than reapply for it.',
+    image: '/img/event-mingle.webp',
+    alt: 'People in conversation at a partner gathering',
   },
   {
     n: '03',
-    title: 'Volunteers deliver',
-    body: 'Sorted, wrapped and handed over in person by people from the same neighbourhood — usually on a Saturday morning.',
-    image: '/img/volunteers-food.webp',
-    alt: 'Volunteers packing boxes of supplies for the community',
+    title: 'Partners deliver',
+    body: 'The work is run by organisations already established in the community. We fund them, support them, and stay out of the way of people who know what they are doing.',
+    image: '/img/volunteers-garden.webp',
+    alt: 'Two volunteers with tools at an outdoor project',
   },
   {
     n: '04',
-    title: 'We stay for the long chapters',
-    body: 'Reading progress is tracked for three years and published in full, whether the numbers flatter us or not.',
-    image: '/img/kids-group.webp',
-    alt: 'A group of smiling children standing together',
+    title: 'We measure and publish',
+    body: 'Outcomes are tracked against what was promised and reported in full each year — whether the numbers flatter us or not.',
+    image: '/img/partners-event.webp',
+    alt: 'A large group gathered at an annual partner event',
   },
 ]
 
@@ -43,11 +43,11 @@ export function Journey() {
       <div className="container-x flex h-full flex-col justify-center">
         <div className="lg:pt-24">
           <Reveal>
-            <p className="eyebrow text-leaf-600">How a gift grows</p>
+            <p className="eyebrow text-leaf-600">How support becomes impact</p>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-5 max-w-2xl font-display text-[clamp(2rem,4.2vw,3.3rem)] leading-[1.06] font-semibold tracking-[-0.025em]">
-              From your hands to theirs, in four steps.
+              From commitment to outcome, in four steps.
             </h2>
           </Reveal>
         </div>
@@ -79,20 +79,21 @@ export function Journey() {
             ))}
 
             <a
-              href="#donate"
+              href="#involved"
               className="group flex w-[80vw] shrink-0 snap-center flex-col justify-between rounded-[1.6rem] bg-navy-900 p-8 text-white sm:w-[26rem] lg:w-[30rem]"
             >
               <div>
                 <p className="eyebrow text-leaf-400">And then?</p>
                 <h3 className="mt-6 font-display text-[clamp(1.7rem,2.4vw,2.2rem)] leading-tight font-semibold tracking-[-0.02em]">
-                  A child who owns books reads 4× more by the time they are eleven.
+                  Success carries a responsibility to create opportunities for others.
                 </h3>
                 <p className="mt-5 text-[15px] leading-relaxed text-navy-100/60">
-                  That is the whole thesis. Everything we fund is in service of it.
+                  That belief decides everything the Foundation funds — and everyone we choose to
+                  fund it alongside.
                 </p>
               </div>
               <span className="mt-10 inline-flex items-center gap-3 font-semibold text-leaf-400">
-                Start the first chapter
+                Work with us
                 <Arrow className="h-4 w-4" />
               </span>
             </a>
@@ -105,7 +106,7 @@ export function Journey() {
               aria-hidden="true"
             />
           </div>
-          <p className="mt-6 text-sm text-navy-900/40 lg:hidden">Swipe to follow the journey →</p>
+          <p className="mt-6 text-sm text-navy-900/40 lg:hidden">Swipe to follow the process →</p>
         </div>
       </div>
     </section>

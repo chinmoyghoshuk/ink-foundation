@@ -7,24 +7,24 @@ import { Reveal } from './Reveal'
 const STORIES = [
   {
     quote:
-      'She used to hide at the back of the class. Now she reads to the little ones on a Friday, and she chooses the book.',
-    name: 'Amara O.',
-    role: 'Parent, Riverside Reading Room',
-    image: '/img/person-1.webp',
+      'They asked what we needed rather than telling us what they wanted to fund. That is rarer than it should be, and it is why the work held up.',
+    name: 'Programme Director',
+    role: 'Education partner',
+    image: '/img/person-3.webp',
   },
   {
     quote:
-      'The bundles changed what our library corner is for. Children come in at break now — not because we ask them to.',
-    name: 'Daniel M.',
-    role: 'Head teacher, partner school',
+      'Multi-year funding changed how we plan. We can hire properly, commit to a full cohort, and be judged on outcomes rather than on optics.',
+    name: 'Chief Executive',
+    role: 'Community organisation',
     image: '/img/person-2.webp',
   },
   {
     quote:
-      'I signed up for one Saturday. Two years later I run the garden rota. It is the best hour of my week, every week.',
-    name: 'Priya R.',
-    role: 'Volunteer, Learning Gardens',
-    image: '/img/person-3.webp',
+      'They stayed through the difficult year. That is usually when you find out what a partnership was actually worth.',
+    name: 'Chair of Trustees',
+    role: 'Sport & wellbeing partner',
+    image: '/img/person-1.webp',
   },
 ]
 
@@ -49,7 +49,7 @@ export function Stories() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3rem)] leading-[1.07] font-semibold tracking-[-0.025em]">
-              The people the numbers are actually about.
+              The people who do the work, on what it changed.
             </h2>
           </Reveal>
 

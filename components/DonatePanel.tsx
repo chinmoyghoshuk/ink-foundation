@@ -6,16 +6,16 @@ type Mode = 'once' | 'monthly'
 
 const AMOUNTS: Record<Mode, { value: number; impact: string }[]> = {
   once: [
-    { value: 10, impact: 'Two books a child chooses and keeps for good.' },
-    { value: 25, impact: 'A full bundle of six books for one young reader.' },
-    { value: 50, impact: 'A week of after-school reading for an entire class.' },
-    { value: 100, impact: 'A month of growing costs for one Learning Garden.' },
+    { value: 25, impact: 'Course materials for one person on a skills programme.' },
+    { value: 50, impact: 'A term of travel costs for a student who would otherwise drop out.' },
+    { value: 100, impact: 'A week of coaching and facilities at a community sports session.' },
+    { value: 250, impact: 'A month of running costs for a small partner organisation.' },
   ],
   monthly: [
-    { value: 5, impact: 'A book a month, every month, for one child.' },
-    { value: 15, impact: 'Keeps a reading room stocked with new titles all year.' },
-    { value: 30, impact: 'Funds a weekly reading volunteer in a partner school.' },
-    { value: 60, impact: 'Covers a bursary place — uniform, travel and exam fees.' },
+    { value: 10, impact: 'Ongoing support for mentoring in an under-served community.' },
+    { value: 25, impact: 'A share of one bursary place, renewed every year it is needed.' },
+    { value: 50, impact: 'Sustained funding a partner can actually plan a programme around.' },
+    { value: 100, impact: 'Core support for a partner working where funding is hardest to find.' },
   ],
 }
 

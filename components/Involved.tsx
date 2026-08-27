@@ -5,25 +5,25 @@ import { Reveal } from './Reveal'
 
 const WAYS = [
   {
-    title: 'Volunteer',
-    body: 'Read with a child, tend a garden bed, or help sort a delivery. Two hours a month is enough to matter.',
-    image: '/img/hands-unity.webp',
-    alt: 'Hands stacked together in the centre of a group',
-    cta: 'Find a role',
-  },
-  {
     title: 'Partner',
-    body: 'Schools, hubs and employers who want a reading room, a garden or a bursary scheme on their doorstep.',
-    image: '/img/community.webp',
-    alt: 'A community gathering under festival lights',
+    body: 'For organisations whose work overlaps with ours — education, community, sport or international development. Tell us what you are trying to do and what stands in the way.',
+    image: '/img/partner-talk.webp',
+    alt: 'Two colleagues in conversation beside a bright office window',
     cta: 'Start a conversation',
   },
   {
+    title: 'Volunteer',
+    body: 'Mentor, coach, sit on a panel, or lend a professional skill our partners would otherwise have to buy. A few hours a month is genuinely useful.',
+    image: '/img/volunteers-tee.webp',
+    alt: 'Volunteers at a community event',
+    cta: 'Find a role',
+  },
+  {
     title: 'Fundraise',
-    body: 'Run, bake, shave, sponsor a shelf. We will send the kit and cheer embarrassingly loudly.',
-    image: '/img/hands-reach.webp',
-    alt: 'Two hands reaching towards each other',
-    cta: 'Get the kit',
+    body: 'Workplace schemes, events, matched giving and legacies. We will help you set it up and account for every pound it raises.',
+    image: '/img/community-together.webp',
+    alt: 'A group of people sitting together looking out over the water',
+    cta: 'Get the details',
   },
 ]
 
@@ -37,7 +37,7 @@ export function Involved() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-5 font-display text-[clamp(2rem,4.2vw,3.3rem)] leading-[1.06] font-semibold tracking-[-0.025em]">
-              There is more than one way to hand someone a book.
+              There is more than one way to be useful.
             </h2>
           </Reveal>
         </div>
@@ -77,11 +77,11 @@ export function Involved() {
           <div className="mt-20 grid items-center gap-10 rounded-[1.8rem] bg-navy-900 px-8 py-12 text-white sm:px-12 lg:grid-cols-2">
             <div>
               <h3 className="font-display text-[clamp(1.6rem,2.6vw,2.2rem)] leading-tight font-semibold tracking-[-0.02em]">
-                Six updates a year. Nothing else, ever.
+                Four updates a year. Nothing else, ever.
               </h3>
               <p className="mt-4 max-w-md text-[15px] leading-relaxed text-navy-100/65">
-                Where the money went, what grew, and the occasional photograph of a very proud
-                seven-year-old holding a book.
+                Where the money went, which commitments were made, and what the organisations we
+                fund managed to do with it.
               </p>
             </div>
 

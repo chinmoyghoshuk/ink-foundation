@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 
 const LINKS = [
-  { label: 'Our story', href: '#story' },
-  { label: 'Programmes', href: '#programmes' },
+  { label: 'Foundation', href: '#foundation' },
+  { label: 'Our work', href: '#focus' },
+  { label: 'Partners', href: '#initiatives' },
   { label: 'Impact', href: '#impact' },
   { label: 'Get involved', href: '#involved' },
 ]
@@ -41,7 +42,7 @@ export function Nav({ logo }: { logo: ReactNode }) {
             {logo}
           </a>
 
-          <nav className="hidden items-center gap-9 lg:flex">
+          <nav className="hidden items-center gap-7 lg:flex xl:gap-9">
             {LINKS.map((link) => (
               <a
                 key={link.href}
@@ -65,7 +66,7 @@ export function Nav({ logo }: { logo: ReactNode }) {
                   : 'bg-leaf-500 text-navy-950 hover:bg-leaf-400'
               }`}
             >
-              Donate
+              Support us
             </a>
             <button
               type="button"
@@ -115,7 +116,7 @@ export function Nav({ logo }: { logo: ReactNode }) {
               onClick={() => setOpen(false)}
               className="mt-4 rounded-full bg-navy-900 px-6 py-4 text-center font-semibold text-white"
             >
-              Donate
+              Support us
             </a>
           </div>
         </div>

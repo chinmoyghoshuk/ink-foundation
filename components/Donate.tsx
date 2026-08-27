@@ -21,25 +21,25 @@ export function Donate() {
       <div className="container-x relative grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <Reveal>
-            <p className="eyebrow text-leaf-400">Give</p>
+            <p className="eyebrow text-leaf-400">Support</p>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-5 font-display text-[clamp(2.1rem,4.4vw,3.5rem)] leading-[1.05] font-semibold tracking-[-0.03em]">
-              Turn a page into a chapter.
+              Give once, or commit for the long term.
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
             <p className="mt-7 max-w-lg text-lg leading-relaxed text-navy-100/70">
-              Every public donation goes straight into programmes — our core costs are covered
+              Every public donation goes straight into programmes — our core costs are underwritten
               separately, so the number you give is the number that arrives.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
             <ul className="mt-10 space-y-4 text-[15px] text-navy-100/65">
               {[
-                'Cancel or change a monthly gift any time',
+                'Cancel or change a regular gift at any time',
                 'Gift Aid adds 25p to every £1 for UK taxpayers',
-                'Annual impact report published in full',
+                'Annual report published in full, every year',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-leaf-400" />

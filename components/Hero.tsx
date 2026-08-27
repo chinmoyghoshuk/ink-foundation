@@ -28,18 +28,19 @@ export function Hero() {
             The charitable foundation of PEN Group Holdings
           </p>
 
-          <h1 className="mt-7 font-display text-[clamp(2.8rem,7.2vw,5.4rem)] leading-[1.02] font-semibold tracking-[-0.03em] text-white">
-            <RevealWords text="Where every story" />
+          <h1 className="mt-7 font-display text-[clamp(2.6rem,6.6vw,5rem)] leading-[1.03] font-semibold tracking-[-0.03em] text-white">
+            <RevealWords text="Success carries" />
             <br className="hidden sm:block" />
-            <RevealWords text="takes root." delay={0.18} highlight={['root']} />
+            <RevealWords text="a responsibility." delay={0.18} highlight={['responsibility']} />
           </h1>
 
           <p
             className="enter-up mt-8 max-w-xl text-lg leading-relaxed text-navy-100/80"
             style={{ animationDelay: '0.7s' }}
           >
-            We put books, learning and green community space within reach of children who are
-            growing up without them — then we stay for the long chapters, not just the first page.
+            The PEN Group Foundation supports charitable, educational and community-focused
+            initiatives around the world — investing in people, backing worthwhile causes, and
+            building brighter futures at home and across the globe.
           </p>
 
           <div
@@ -47,17 +48,17 @@ export function Hero() {
             style={{ animationDelay: '0.85s' }}
           >
             <a
-              href="#donate"
+              href="#focus"
               className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-leaf-500 px-8 py-4 font-semibold text-navy-950 transition-colors hover:bg-leaf-400"
             >
-              <span className="relative z-10">Donate today</span>
+              <span className="relative z-10">Explore our work</span>
               <Arrow className="relative z-10 h-4 w-4 transition-transform duration-400 group-hover:translate-x-1" />
             </a>
             <a
-              href="#story"
+              href="#foundation"
               className="inline-flex items-center gap-3 rounded-full border border-white/25 px-8 py-4 font-semibold text-white transition-colors hover:border-white/60 hover:bg-white/5"
             >
-              Our story
+              About the Foundation
             </a>
           </div>
 
@@ -66,10 +67,10 @@ export function Hero() {
             style={{ animationDelay: '1.05s' }}
           >
             <span className="flex items-center gap-2">
-              <Dot /> 100% of public gifts reach programmes
+              <Dot /> Charitable, educational &amp; community
             </span>
             <span className="flex items-center gap-2">
-              <Dot /> Independently audited
+              <Dot /> Independently governed
             </span>
           </div>
         </div>
@@ -79,8 +80,8 @@ export function Hero() {
             <div className="absolute -inset-3 rounded-[2rem] border border-white/10" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.7rem] shadow-2xl shadow-navy-950/50">
               <Image
-                src="/img/hero-children.webp"
-                alt="Children laughing together outside a community learning centre"
+                src="/img/hero-community.webp"
+                alt="Four people looking out over a city skyline at dusk"
                 fill
                 priority
                 sizes="(max-width: 1023px) 92vw, 40vw"
@@ -89,10 +90,13 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent" />
             </div>
 
-            <div className="animate-float absolute -bottom-7 -left-6 w-[15rem] rounded-2xl border border-white/10 bg-navy-950/85 p-5 backdrop-blur-md sm:-left-10">
-              <p className="font-display text-3xl font-semibold text-leaf-400">12,480</p>
-              <p className="mt-1 text-sm leading-snug text-navy-100/70">
-                children reading with us this year
+            <div className="animate-float absolute -bottom-7 -left-6 w-[16rem] rounded-2xl border border-white/10 bg-navy-950/85 p-5 backdrop-blur-md sm:-left-10">
+              <p className="eyebrow text-leaf-400">In partnership with</p>
+              <p className="mt-3 font-display text-lg leading-snug font-semibold text-white">
+                Mosaic · Lincoln City FC
+              </p>
+              <p className="mt-2 text-sm leading-snug text-navy-100/60">
+                and organisations like them
               </p>
             </div>
           </div>
@@ -100,7 +104,7 @@ export function Hero() {
       </div>
 
       <a
-        href="#story"
+        href="#foundation"
         className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-[11px] tracking-[0.3em] text-white/45 uppercase lg:flex"
       >
         Scroll

@@ -2,20 +2,20 @@ import { Counter } from './Counter'
 import { Reveal } from './Reveal'
 
 const STATS = [
-  { value: 12480, label: 'children reading with us', suffix: '' },
-  { value: 340, label: 'books placed in young hands', suffix: 'k' },
-  { value: 96, label: 'schools & community hubs', suffix: '' },
-  { value: 18, label: 'green learning gardens', suffix: '' },
+  { value: 64, label: 'initiatives supported since inception', suffix: '' },
+  { value: 30, label: 'partner organisations', suffix: '+' },
+  { value: 12, label: 'countries reached', suffix: '' },
+  { value: 100, label: 'of public donations reaching programmes', suffix: '%' },
 ]
 
 export function Stats() {
   return (
-    <section className="bg-cream py-24 sm:py-32">
+    <section className="bg-cream pb-24 sm:pb-32">
       <div className="container-x">
         <Reveal className="max-w-2xl">
           <p className="eyebrow text-leaf-600">By the numbers</p>
           <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] leading-[1.08] font-semibold tracking-[-0.02em]">
-            Small beginnings, measured carefully.
+            Committed carefully. Measured honestly.
           </h2>
         </Reveal>
 

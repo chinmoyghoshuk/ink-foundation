@@ -17,9 +17,9 @@ const inter = Inter({
   display: 'swap',
 })
 
-const title = 'PEN Group Foundation — Where every story takes root'
+const title = 'PEN Group Foundation — Charitable, educational and community initiatives'
 const description =
-  'PEN Group Foundation is the charitable foundation of PEN Group Holdings, putting books, learning and green community space within reach of every child. Give, volunteer or partner with us.'
+  'The PEN Group Foundation supports charitable, educational and community-focused initiatives around the world — investing in people, supporting worthwhile causes and partnering with organisations that share our values.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://foundation.pencloud.uk'),
@@ -28,7 +28,8 @@ export const metadata: Metadata = {
   icons: { icon: '/favicon.png', apple: '/apple-touch-icon.png' },
   openGraph: {
     title,
-    description: 'Books, learning and green community space within reach of every child.',
+    description:
+      'Supporting charitable, educational and community-focused initiatives around the world.',
     type: 'website',
     images: [{ url: '/og.png', width: 1200, height: 630 }],
   },

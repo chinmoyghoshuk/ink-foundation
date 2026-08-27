@@ -4,11 +4,11 @@ import { LogoLockup } from './BrandLogo'
 const COLUMNS = [
   {
     title: 'Foundation',
-    links: ['Our story', 'Programmes', 'Impact reports', 'Trustees', 'Careers'],
+    links: ['About us', 'What we support', 'Partners', 'Annual reports', 'Trustees'],
   },
   {
     title: 'Support us',
-    links: ['Donate', 'Monthly giving', 'Volunteer', 'Corporate partners', 'Leave a legacy'],
+    links: ['Donate', 'Regular giving', 'Corporate partnerships', 'Volunteer', 'Leave a legacy'],
   },
   {
     title: 'Contact',
@@ -40,7 +40,7 @@ export function Footer() {
             <div className="lg:col-span-4">
               <LogoLockup className="logo-on-dark h-24 text-white" label="PEN Group Foundation" />
               <p className="mt-8 max-w-xs text-[15px] leading-relaxed text-navy-100/55">
-                Books, learning and green community space within reach of every child.
+                Supporting charitable, educational and community-focused initiatives around the world.
               </p>
               <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-navy-100/55">
                 The charitable organisation of{' '}

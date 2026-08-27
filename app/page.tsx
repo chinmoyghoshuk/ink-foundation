@@ -2,11 +2,12 @@ import { AnchorScroll } from '@/components/AnchorScroll'
 import { Donate } from '@/components/Donate'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
+import { Initiatives } from '@/components/Initiatives'
 import { Involved } from '@/components/Involved'
 import { Journey } from '@/components/Journey'
-import { Marquee } from '@/components/Marquee'
 import { LogoMark } from '@/components/BrandLogo'
 import { Nav } from '@/components/Nav'
+import { Partners } from '@/components/Partners'
 import { Programmes } from '@/components/Programmes'
 import { ScrollProgress } from '@/components/ScrollProgress'
 import { SmoothScroll } from '@/components/SmoothScroll'
@@ -23,10 +24,11 @@ export default function Page() {
       <Nav logo={<LogoMark className="h-full" />} />
       <main>
         <Hero />
-        <Marquee />
+        <Partners />
         <Story />
         <Stats />
         <Programmes />
+        <Initiatives />
         <Journey />
         <Stories />
         <Donate />
