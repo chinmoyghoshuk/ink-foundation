@@ -59,7 +59,7 @@ export function Nav({ logo }: { logo: ReactNode }) {
 
           <div className="flex items-center gap-3">
             <a
-              href="#donate"
+              href="#involved"
               className={`hidden rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 sm:inline-flex ${
                 solid
                   ? 'bg-navy-900 text-white hover:bg-navy-800'
@@ -112,7 +112,7 @@ export function Nav({ logo }: { logo: ReactNode }) {
               </a>
             ))}
             <a
-              href="#donate"
+              href="#involved"
               onClick={() => setOpen(false)}
               className="mt-4 rounded-full bg-navy-900 px-6 py-4 text-center font-semibold text-white"
             >

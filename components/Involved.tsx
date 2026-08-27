@@ -46,7 +46,7 @@ export function Involved() {
           {WAYS.map((way, i) => (
             <Reveal key={way.title} delay={i * 0.08}>
               <a
-                href="#donate"
+                href="mailto:hello@pengroupfoundation.org"
                 className="group flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-navy-900/10 bg-white transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5"
               >
                 <div className="relative aspect-[16/11] overflow-hidden">

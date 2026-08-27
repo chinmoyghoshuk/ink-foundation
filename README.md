@@ -114,9 +114,7 @@ real details before going live:
 - **Partner descriptions.** The Mosaic and Lincoln City FC entries describe the *kind* of
   work the Foundation supports, not anything either organisation has agreed to. Confirm
   the wording with each partner, and obtain permission before using their logos.
-- **Statistics** in the "By the numbers" section, and the donation amounts and their
-  stated impact in `components/DonatePanel.tsx`.
+- **Statistics** in the "By the numbers" section.
 - **Testimonials** in `components/Stories.tsx`, attributed to unnamed roles rather than
   real people, precisely because they are not yet real.
 - **Contact details, registered office and charity number** in `components/Footer.tsx`.
-- The **Donate button is not wired to a payment provider.**

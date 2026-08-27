@@ -1,5 +1,4 @@
 import { AnchorScroll } from '@/components/AnchorScroll'
-import { Donate } from '@/components/Donate'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
 import { Initiatives } from '@/components/Initiatives'
@@ -29,7 +28,6 @@ export default function Page() {
         <Initiatives />
         <Journey />
         <Stories />
-        <Donate />
         <Involved />
       </main>
       <Footer />
